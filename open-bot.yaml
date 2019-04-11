@@ -28,4 +28,4 @@ rules:
 - filters:
     open: true
   actions:
-    schedule: 10m
+    schedule: 2m

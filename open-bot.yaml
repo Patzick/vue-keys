@@ -4,14 +4,14 @@ rules:
 - filters:
     not:
       label: inactive
-    last_action_age: 30m
+    last_action_age: 10m
   actions:
     comment: Inactive! This issue will close in 10 minutes.
     label: inactive
 - filters:
     label: inactive
     last_action_age:
-      maximum: 25m
+      maximum: 7m
   actions:
     label:
       remove:

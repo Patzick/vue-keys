@@ -1,0 +1,31 @@
+bot: teest-bot
+rules:
+
+- filters:
+    not:
+      label: inactive
+    last_action_age: 30m
+  actions:
+    comment: Inactive! This issue will close in 10 minutes.
+    label: inactive
+- filters:
+    label: inactive
+    last_action_age:
+      maximum: 25m
+  actions:
+    label:
+      remove:
+        - inactive
+
+- filters:
+    last_action_age:
+      minimum: 10m
+      includeBotActions: true
+    label: inactive
+  actions:
+    close: true
+
+- filters:
+    open: true
+  actions:
+    schedule: 10m
